@@ -1,6 +1,22 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import '@/styles/globals.css';
+
+const App = ({ Component, pageProps}: AppProps) => {
+  return (
+      <>
+        <Head>
+          <title>Basement Supply</title>
+          <meta content='Coding challenge for basement.studio.' name='description' />
+        </Head>
+        <Component {...pageProps} />
+      </>
+  );
 }
+
+export default App;
+
+// export default function App({ Component, pageProps }: AppProps) {
+//   return <Component {...pageProps} />
+// }
