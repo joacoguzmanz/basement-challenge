@@ -7,7 +7,6 @@ import Cart from "@/components/Cart";
 
 import logo from "../public/logo.svg";
 
-
 interface Props {
   products: Product[];
 }
