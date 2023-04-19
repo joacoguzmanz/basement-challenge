@@ -16,7 +16,3 @@ const App = ({ Component, pageProps}: AppProps) => {
 }
 
 export default App;
-
-// export default function App({ Component, pageProps }: AppProps) {
-//   return <Component {...pageProps} />
-// }
