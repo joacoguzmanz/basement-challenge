@@ -13,7 +13,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
   return (
     <div className='relative'>
       <div className='border-b bg-gradient-to-b to-[#1D1D1D] from-[#15151500]'>
-        <Image src={image} alt={name} width={300} height={300} priority={true} />
+        <Image src={image.url} alt={image.alt} width={300} height={300} priority={true} />
       </div>
       <h3 className='font-primary'>{name}</h3>
       <p>${price}</p>

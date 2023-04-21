@@ -2,6 +2,7 @@ import React from 'react';
 import { useShoppingCart } from "@/context/ShoppingCartContext";
 import storeItems from "@/product/mock.json";
 import Image from "next/image";
+import { currencyFormatter } from "@/utils/currencyFormatter";
 
 interface CartItemProps {
   id: number;
@@ -22,6 +23,19 @@ const CartItem: React.FC<CartItemProps> = ({ id, quantity }) => {
       <div>
         <h3>{item.name}</h3>
         <p>{item.description}</p>
+        <div className='flex gap-5'>
+          <button onClick={() => decreaseItemQuantity(item.id)}>-</button>
+          <span>{quantity}</span>
+          <button onClick={() => increaseItemQuantity(item.id)}>+</button>
+          {item.sizes.map((size, id) => {
+            return (
+              <div key={id}>
+                {size}
+              </div>
+            )
+          })}
+        </div>
+        <p>{currencyFormatter(item.price)}</p>
       </div>
     </div>
   )
