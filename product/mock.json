@@ -1,22 +1,50 @@
-{
-  "products": [
-    {
-      "id": 1,
-      "name": "Black t-Shirt",
-      "price": 7.95,
-      "image": "/public/products/shirt.png"
+[
+  {
+    "id": 1,
+    "name": "Black t-Shirt",
+    "description": "Unisex Basic Softstyle T-Shirt",
+    "price": 7.95,
+    "image": {
+      "url": "/products/shirt.png",
+      "alt": "Black t-Shirt"
     },
-    {
-      "id": 2,
-      "name": "Black hoodie",
-      "price": 13,
-      "image": "/public/products/hoodie.png"
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Black hoodie",
+    "description": "Unisex Basic Softstyle Hoodie",
+    "price": 13,
+    "image": {
+      "url": "/products/hoodie.png",
+      "alt": "Black hoodie"
     },
-    {
-      "id": 3,
-      "name": "Black cap",
-      "price": 23,
-      "image": "/public/products/cap.png"
-    }
-  ]
-}
+    "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Black cap",
+    "description": "Unisex Basic Black Cap",
+    "price": 23,
+    "image": {
+      "url": "/products/cap.png",
+      "alt": "Black cap"
+    },
+    "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+    ]
+  }
+]

@@ -4,6 +4,7 @@ import ProductCard from "../components/ProductCard";
 import React, { useState } from "react";
 import Button from "@/components/Button";
 import Cart from "@/components/Cart";
+import { useShoppingCart } from "@/context/ShoppingCartContext";
 
 import logo from "../public/logo.svg";
 
@@ -12,12 +13,7 @@ interface Props {
 }
 
 const Home: NextPage<Props> = ({ products }) => {
-  const [cart, setCart] = useState<Product[]>([]);
-  const [showCart, setShowCart] = useState<boolean>(false);
-
-  const toggleCart = () => {
-    setShowCart(!showCart);
-  }
+  const { openCart, increaseItemQuantity, cartQuantity } = useShoppingCart();
 
   return (
       <div className='bg-black'>
@@ -25,16 +21,12 @@ const Home: NextPage<Props> = ({ products }) => {
           {products.map((product: Product, id: number) => (
             <div key={id} className='group'>
               <ProductCard product={product} />
-              <Button text={'Agregar al carrito'} onClick={() => setCart(() => cart.concat(product))} />
+              <Button text={'Agregar al carrito'} onClick={() => increaseItemQuantity(product.id)} />
             </div>
           ))}
         </div>
 
-        <button className='mt-20' onClick={toggleCart}>Mostrar carrito {cart.length} </button>
-
-        <div className={`${showCart ? 'block' : 'hidden'}`}>
-          <Cart cart={cart} onClick={toggleCart} />
-        </div>
+        <button className='mt-20' onClick={openCart}>Mostrar carrito {cartQuantity} </button>
       </div>
   );
 }

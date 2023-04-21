@@ -7,19 +7,22 @@ const products: Product[] = [
     "id": 1,
     "name": "Black t-Shirt",
     "price": 7.95,
-    "image": "/products/shirt.png"
+    "image": "/products/shirt.png",
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "id": 2,
     "name": "Black hoodie",
     "price": 13,
-    "image": "/products/hoodie.png"
+    "image": "/products/hoodie.png",
+    "sizes": ["S", "M", "L", "XL"]
   },
   {
     "id": 3,
     "name": "Black cap",
     "price": 23,
-    "image": "/products/cap.png"
+    "image": "/products/cap.png",
+    "sizes": ["S", "M", "L", "XL"]
   }
 ];
 

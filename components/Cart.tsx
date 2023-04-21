@@ -1,28 +1,25 @@
-import { Product } from "@/product/types";
+import CartItem from "@/components/CartItem";
 import React from "react";
+import { useShoppingCart } from "@/context/ShoppingCartContext";
 
-interface Props {
-  cart: Product[];
-  onClick?: () => void;
+interface CartProps {
+  isOpen: boolean;
+  onClick: () => void;
 }
 
-const Cart: React.FC<Props> = ({ cart, onClick }) => {
-  let finalPrice: number = 0;
+const Cart: React.FC<CartProps> = ({ isOpen, onClick }) => {
+  const { cartItems, increaseItemQuantity, decreaseItemQuantity, removeItemFromCart } = useShoppingCart();
 
   return (
-    <div className='py-10'>
+    <div className={`${isOpen ? 'block' : 'hidden'} py-10`}>
       <button className='border rounded-full border-white px-5 py-1.5 mb-5' onClick={onClick}>Cerrar carrito</button>
-      {Boolean(cart.length) && (cart.map((product: Product, id: number) => {
-        const { name, price, image } = product;
+      <div className='flex flex-col gap-5'>
+        {cartItems.map((item, id) => {
           return (
-            <div className='bg-black flex gap-10' key={id}>
-              <p className='text-white'>{name}</p>
-              <p className='text-white'>${price}</p>
-              <p className='text-white'>${finalPrice += price}</p>
-            </div>
+            <CartItem key={id} {...item} />
           )
-        })
-      )}
+        })}
+      </div>
     </div>
   )
 }
