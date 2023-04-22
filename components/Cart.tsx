@@ -10,7 +10,7 @@ interface CartProps {
 }
 
 const Cart: React.FC<CartProps> = ({ isOpen, onClick }) => {
-  const { cartItems, cartQuantity } = useShoppingCart();
+  const { cartItems, cartQuantity, checkout } = useShoppingCart();
 
   return (
     <div className={`${isOpen ? 'block' : 'hidden'} py-10`}>
@@ -27,6 +27,7 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClick }) => {
           return total + (item?.price || 0) * cartItem.quantity;
         }, 0))}</p>
       </div>
+      <button className='border border-white px-5 py-1.5 mt-5' onClick={checkout}>Checkout</button>
     </div>
   )
 }

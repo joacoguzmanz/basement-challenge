@@ -20,12 +20,14 @@ interface ShoppingCartContext {
   increaseItemQuantity: (id: number) => void;
   decreaseItemQuantity: (id: number) => void;
   removeItemFromCart: (id: number) => void;
+  selectSize: (id: number, size: string) => void;
 
   // cart related
   openCart: () => void;
   closeCart: () => void;
   cartQuantity: number;
   cartItems: CartItem[];
+  checkout: () => void;
 }
 
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
@@ -61,7 +63,7 @@ export const ShoppingCartProvider = ({ children }: ShoppingCartProviderProps) =>
       } else {
         return currItems.map(item => {
           if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1}
+            return { ...item, quantity: item.quantity + 1 }
           } else {
             return item;
           }
@@ -92,11 +94,28 @@ export const ShoppingCartProvider = ({ children }: ShoppingCartProviderProps) =>
     })
   }
 
+  const selectSize = (id: number, size: string) => {
+    setCartItems(currItems => {
+      return currItems.map(item => {
+        if (item.id === id) {
+          return { ...item, size: size }
+        } else {
+          return item;
+        }
+      })
+    })
+  }
+
   const openCart = () => setIsOpen(true)
 
   const closeCart = () => setIsOpen(false)
 
   const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0);
+
+  const checkout = () => {
+    console.log(cartItems);
+    closeCart();
+  }
 
   return (
     <ShoppingCartContext.Provider value={{
@@ -107,7 +126,9 @@ export const ShoppingCartProvider = ({ children }: ShoppingCartProviderProps) =>
       cartItems,
       cartQuantity,
       openCart,
-      closeCart
+      closeCart,
+      checkout,
+      selectSize
     }}>
       {children}
       <Cart isOpen={isOpen} onClick={closeCart} />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from "react";
 import { useShoppingCart } from "@/context/ShoppingCartContext";
 import storeItems from "@/product/mock.json";
 import Image from "next/image";
@@ -10,7 +10,7 @@ interface CartItemProps {
 }
 
 const CartItem: React.FC<CartItemProps> = ({ id, quantity }) => {
-  const { increaseItemQuantity, decreaseItemQuantity } = useShoppingCart();
+  const { increaseItemQuantity, decreaseItemQuantity, selectSize } = useShoppingCart();
   const item = storeItems.find(selectedItem => selectedItem.id === id);
 
   if (item == null) return null;
@@ -30,7 +30,14 @@ const CartItem: React.FC<CartItemProps> = ({ id, quantity }) => {
           {item.sizes.map((size, id) => {
             return (
               <div key={id}>
-                {size}
+                <input type={'radio'} value={size} id={'size' + item.id}
+                       name={'size' + item.id}
+                       className={`peer`} />
+                <label htmlFor={'size' + item.id}
+                       className={`peer-checked:border peer-checked:border-white peer-checked:rounded-full select-none cursor-pointer`}
+                       onClick={() => selectSize(item.id, size)}>
+                  {size}
+                </label>
               </div>
             )
           })}
