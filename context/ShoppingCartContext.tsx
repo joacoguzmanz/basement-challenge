@@ -1,7 +1,6 @@
 import React, {createContext, useContext, useEffect} from "react";
 import { useState } from "react";
 import Cart from "@/components/Cart";
-import { useLocalStorage } from "@/hooks/useLocalStorage";
 
 interface ShoppingCartProviderProps {
   children: React.ReactNode;
