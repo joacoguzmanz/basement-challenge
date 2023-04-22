@@ -3,10 +3,15 @@ interface imageType {
   alt: string;
 }
 
+interface sizeType {
+  id: number;
+  size: string;
+}
+
 export interface Product {
   id: number;
   name: string;
   price: number;
   image: imageType;
-  sizes: string[];
+  sizes: sizeType[];
 }

@@ -30,13 +30,13 @@ const CartItem: React.FC<CartItemProps> = ({ id, quantity }) => {
           {item.sizes.map((size, id) => {
             return (
               <div key={id}>
-                <input type={'radio'} value={size} id={'size' + item.id}
+                <input type={'radio'} value={size.name} id={'size' + size.id}
                        name={'size' + item.id}
-                       className={`peer`} />
-                <label htmlFor={'size' + item.id}
+                       className={`peer hidden`} />
+                <label htmlFor={'size' + size.id}
                        className={`peer-checked:border peer-checked:border-white peer-checked:rounded-full select-none cursor-pointer`}
-                       onClick={() => selectSize(item.id, size)}>
-                  {size}
+                       onClick={() => selectSize(item.id, size.name)}>
+                  {size.name}
                 </label>
               </div>
             )

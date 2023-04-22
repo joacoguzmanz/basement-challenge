@@ -9,10 +9,22 @@
       "alt": "Black t-Shirt"
     },
     "sizes": [
-      "S",
-      "M",
-      "L",
-      "XL"
+      {
+        "id": 1,
+        "name": "S"
+      },
+      {
+        "id": 2,
+        "name": "M"
+      },
+      {
+        "id": 3,
+        "name": "L"
+      },
+      {
+        "id": 4,
+        "name": "XL"
+      }
     ]
   },
   {
@@ -25,10 +37,22 @@
       "alt": "Black hoodie"
     },
     "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
+      {
+        "id": 5,
+        "name": "S"
+      },
+      {
+        "id": 6,
+        "name": "M"
+      },
+      {
+        "id": 7,
+        "name": "L"
+      },
+      {
+        "id": 8,
+        "name": "XL"
+      }
     ]
   },
   {
@@ -41,10 +65,22 @@
       "alt": "Black cap"
     },
     "sizes": [
-        "S",
-        "M",
-        "L",
-        "XL"
+        {
+            "id": 9,
+            "name": "S"
+        },
+        {
+            "id": 10,
+            "name": "M"
+        },
+        {
+            "id": 11,
+            "name": "L"
+        },
+        {
+            "id": 12,
+            "name": "XL"
+        }
     ]
   }
 ]
