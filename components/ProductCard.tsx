@@ -1,14 +1,13 @@
 import { Product } from "@/product/types";
 import Image from "next/image";
-import Button from "@/components/Button";
 import React from "react";
 
 interface Props {
-  product: Product
+  product: Product;
 }
 
 const ProductCard: React.FC<Props> = ({ product }) => {
-  const { name, price, image } = product;
+  const { name, price, image, sizes } = product;
 
   return (
     <div className='relative'>

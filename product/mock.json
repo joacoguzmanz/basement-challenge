@@ -11,19 +11,19 @@
     "sizes": [
       {
         "id": 1,
-        "name": "S"
+        "size": "S"
       },
       {
         "id": 2,
-        "name": "M"
+        "size": "M"
       },
       {
         "id": 3,
-        "name": "L"
+        "size": "L"
       },
       {
         "id": 4,
-        "name": "XL"
+        "size": "XL"
       }
     ]
   },
@@ -39,19 +39,19 @@
     "sizes": [
       {
         "id": 5,
-        "name": "S"
+        "size": "S"
       },
       {
         "id": 6,
-        "name": "M"
+        "size": "M"
       },
       {
         "id": 7,
-        "name": "L"
+        "size": "L"
       },
       {
         "id": 8,
-        "name": "XL"
+        "size": "XL"
       }
     ]
   },
@@ -67,19 +67,19 @@
     "sizes": [
         {
             "id": 9,
-            "name": "S"
+            "size": "S"
         },
         {
             "id": 10,
-            "name": "M"
+            "size": "M"
         },
         {
             "id": 11,
-            "name": "L"
+            "size": "L"
         },
         {
             "id": 12,
-            "name": "XL"
+            "size": "XL"
         }
     ]
   }
