@@ -4,6 +4,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .threeD {
+    transform: translate3d(calc(-25%),0, 0);
+    animation: marquee 5s linear infinite;
+  }
+  @keyframes marquee {
+    0% {
+      transform: translate3d(calc(-25%),0, 0);
+    }
+    100% {
+      transform: translate3d(calc(-45%),0, 0);
+    }
+  }
+  .paused {
+    animation-play-state: paused;
+  }
+  .running {
+    animation-play-state: running;
+  }
+}
+
 html,
 body,
 #__next {

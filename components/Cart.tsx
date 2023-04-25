@@ -13,7 +13,7 @@ const Cart: React.FC<CartProps> = ({ isOpen, onClick }) => {
   const { cartItems, cartQuantity, checkout } = useShoppingCart();
 
   return (
-    <div className={`${isOpen ? 'block' : 'hidden'} py-10`}>
+    <div className={`${isOpen ? 'absolute z-50 right-0 left-0 top-0 bottom-0 bg-black' : 'hidden'} py-10`}>
       <button className='border rounded-full border-white px-5 py-1.5 mb-5' onClick={onClick}>Cerrar carrito</button>
       {!cartQuantity && <p>No items yet</p>}
       <div className='flex flex-col gap-5'>
